@@ -1,2 +1,4 @@
-# mal-tools
- Running analytics on MyAnimeList to satisfy personal curiosity using the Jikan API.
+# Tools for MyAnimeList
+
+Repo includes
+- sleeper_hits: Takes the top anime and sorts them by "sleeper hit" factor, the difference between their rank and popularity.
