@@ -14,30 +14,56 @@ async function getIdFromSearch(str_ani) {
 async function getTopRecs(id_ani, n_recs) {
   try {
     let recdata = await jikanjs.loadAnime(id_ani, "recommendations");
-    let top_recs = [];
-    for (let i = 0; i < Math.min(n_recs, recdata["data"].length); i++) {
-      let id_idx = recdata["data"][i]["url"].indexOf("-")+1;
-      let id = recdata["data"][i]["url"].substring(id_idx);
-      top_recs.push(id);
+    let recs = recdata["data"].slice(0, Math.min(n_recs, recdata["data"].length));
+    let top = [];
+    for (let rec of recs){
+      top.push(rec["entry"]["mal_id"]);
     }
-    return top_recs;
+    return top;
   } catch (error) {
     console.error("Error fetching data: ", error);
     throw error;
   }
 }
 
-let str_ani1 = prompt("First anime? ");
-let str_ani2 = prompt("Second anime? ");
-
-(async () => {
+async function getPath(ani1, ani2, n_recs) {
   try {
-    let id_ani1 = await getIdFromSearch(str_ani1);
-    let id_ani2 = await getIdFromSearch(str_ani2);
-    let queue = await getTopRecs(id_ani1, 5);
-    console.log(queue);
+    let start = await getIdFromSearch(ani1);
+    let end = await getIdFromSearch(ani2);
+    let queue = [start];
+    let parent = {}
+    while (queue.length > 0) {
+      let node = queue.shift();
+      let recs = await getTopRecs(node, n_recs);
+      for (let nbr of recs) {
+        if (!(nbr in parent)) {
+          parent[nbr] = node;
+          queue.push(nbr);
+        }
+        if (nbr == end) {
+          let curr = end;
+          let path = []
+          while (curr != start) {
+            path.push(curr);
+            curr = parent[curr];
+          }
+          path.push(start);
+          return ("Path found! ", path.reverse());
+        }
+      }
+    }
+    return "Path not found.";
   } catch (error) {
     console.error("Error fetching data: ", error);
     throw error;
   }
+}
+
+let ani1 = prompt("First anime? ");
+let ani2 = prompt("Second anime? ");
+let n_recs = prompt("How many of the top recs should be checked? ");
+
+(async () => {
+  path = await getPath(ani1, ani2, n_recs);
+  console.log(path);
 })();
