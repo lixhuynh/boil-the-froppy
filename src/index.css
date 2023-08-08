@@ -1,0 +1,26 @@
+.icon {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    align-items: center;
+    width: 90%;
+}
+
+.card {
+    margin: 20px;
+    height: 200px;
+}
+
+.footer {
+    padding: 10px;
+}
