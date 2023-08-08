@@ -7,6 +7,7 @@ function Banner() {
           width="50"
           height="30"
           className="icon d-inline-block align-top"
+          style={{ padding: "0 10px" }}
         />
         Boil the Froppy
       </a>

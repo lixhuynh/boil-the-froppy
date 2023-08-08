@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="footer">
+    <div style={{ padding: "10px" }}>
       created by <b>@lixhuynh</b>. runs on <b>react & jikan</b>.
     </div>
   );

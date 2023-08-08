@@ -2,14 +2,12 @@ function Search() {
   return (
     <>
       <div className="centered-container">
-        <input type="text" value="Attack on Titan"></input>
-        to
-        <input type="text" value="Madoka Magica"></input>
+        find a path between two anime using MAL recommendations!
       </div>
       <div className="centered-container">
-        <button type="button" className="btn btn-success">
-          kero!
-        </button>
+        <input type="text" />
+        <span style={{ margin: "0 5px" }}>to</span>
+        <input type="text" />
       </div>
     </>
   );

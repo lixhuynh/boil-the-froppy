@@ -1,12 +1,12 @@
-.icon {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 .centered-container {
     display: flex;
     justify-content: center;
     padding: 5px;
+    width: 100%;
+}
+
+input[type=text]{
+    border-radius:10px;
 }
 
 .card-grid {
@@ -19,8 +19,4 @@
 .card {
     margin: 20px;
     height: 200px;
-}
-
-.footer {
-    padding: 10px;
 }
