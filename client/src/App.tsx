@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
-import Search from "./components/Search";
-import SearchButton from "./components/SearchButton";
+import SearchForm from "./components/SearchForm";
 
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
+  const [backendData, setBackendData] = useState({ query: [0] });
   useEffect(() => {
     fetch("/api")
       .then((response) => response.json())
@@ -16,8 +15,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Search />
-      <SearchButton />
+      <SearchForm data={backendData} />
       <Footer />
     </div>
   );
