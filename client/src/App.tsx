@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import SearchForm from "./components/SearchForm";
 
 function App() {
-  const [backendData, setBackendData] = useState({ query: [0] });
+  const [backendData, setBackendData] = useState({});
   useEffect(() => {
     fetch("/api")
       .then((response) => response.json())
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <SearchForm data={backendData} />
+      <SearchForm />
       <Footer />
     </div>
   );

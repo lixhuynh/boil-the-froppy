@@ -1,11 +1,7 @@
 import { useState } from "react";
 import RecCardGrid from "./RecCardGrid";
 
-interface Props {
-  data: { query: number[] };
-}
-
-function SearchForm({ data }: Props) {
+function SearchForm() {
   const [contentLoaded, setContentLoaded] = useState(false);
   const loadContent = async () => {
     setContentLoaded(true);
@@ -31,7 +27,7 @@ function SearchForm({ data }: Props) {
         </form>
       </div>
       <div className="centered-container">
-        {contentLoaded && <RecCardGrid names={data.query} />}
+        {contentLoaded && <RecCardGrid />}
       </div>
     </>
   );
