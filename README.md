@@ -10,8 +10,15 @@ Inspired by "Boil the Frog," a tool that finds a path between two musical artist
 - Connected backend to frontend
   - Chose Node.js for consistency & pre-existing knowledge with JikanJS.
   - Primary problem was proxying from different ports (especially Vite).
+- Created backend functions
+  - Built graph, implemented Dijkstra.
+- Integrated POST requests
 
 Currently:
-- Deploy path-finding algorithm to existing backend
-- Integrate components to achieve page functionality
+- Increase functionality
+  - Support searching anime
+  - Handle invalid inputs
+  - Integrate cards with data
 - Use custom CSS to spruce up display
+- Look into Redux
+- Visualize graph; increase graph size
