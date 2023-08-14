@@ -12,13 +12,12 @@ Inspired by "Boil the Frog," a tool that finds a path between two musical artist
   - Primary problem was proxying from different ports (especially Vite).
 - Created backend functions
   - Built graph, implemented Dijkstra.
-- Integrated POST requests
+- Integrated POSTing
+  - Request: [animeTo, animeFrom] from text inputs
+  - Response: path between the two (not including animeTo)
 
 Currently:
-- Increase functionality
-  - Support searching anime
-  - Handle invalid inputs
-  - Integrate cards with data
-- Use custom CSS to spruce up display
+- Improve display
+  - Customize start card
 - Look into Redux
 - Visualize graph; increase graph size

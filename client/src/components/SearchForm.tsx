@@ -2,6 +2,7 @@ import { useState } from "react";
 import RecCardGrid from "./RecCardGrid";
 
 function SearchForm() {
+  const [content, setContent] = useState([]);
   const [contentLoaded, setContentLoaded] = useState(false);
   const [animeFrom, setAnimeFrom] = useState("");
   const [animeTo, setAnimeTo] = useState("");
@@ -20,7 +21,7 @@ function SearchForm() {
       try {
         const res = await fetch("/api", params);
         const resData = await res.json();
-        console.log(resData);
+        setContent(resData);
         setContentLoaded(true);
       } catch (error) {
         throw error;
@@ -56,7 +57,7 @@ function SearchForm() {
         </form>
       </div>
       <div className="centered-container">
-        {contentLoaded && <RecCardGrid />}
+        {contentLoaded && <RecCardGrid path={content} />}
       </div>
     </>
   );

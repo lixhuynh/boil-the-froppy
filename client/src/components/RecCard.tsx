@@ -1,14 +1,14 @@
 interface Props {
   name: string;
-  numRecs: number;
+  votes: number;
 }
 
-function RecCard({ name, numRecs }: Props) {
+function RecCard({ name, votes }: Props) {
   return (
     <div className="card text-center mb-3" style={{ width: "15rem" }}>
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        <p className="card-text">with {numRecs} recommendations</p>
+        <p className="card-text">with {votes} recommendations</p>
       </div>
     </div>
   );
