@@ -1,17 +1,15 @@
 import RecCard from "./RecCard";
 
-function RecCardGrid() {
-  const cardData = [
-    { name: "Attack on Titan", numRecs: 0 },
-    { name: "Neon Genesis Evangelion", numRecs: 27 },
-    { name: "Madoka Magica", numRecs: 969 },
-  ];
+interface Props {
+  path: { [key: string]: any }[];
+}
 
+function RecCardGrid({ path }: Props) {
   return (
     <div className="centered-container">
       <div className="card-grid">
-        {cardData.map((card, index) => (
-          <RecCard key={index} name={card.name} numRecs={card.numRecs} />
+        {path.map((card, index) => (
+          <RecCard key={index} name={card.name} votes={card.votes} />
         ))}
       </div>
     </div>

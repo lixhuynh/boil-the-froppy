@@ -10,8 +10,14 @@ Inspired by "Boil the Frog," a tool that finds a path between two musical artist
 - Connected backend to frontend
   - Chose Node.js for consistency & pre-existing knowledge with JikanJS.
   - Primary problem was proxying from different ports (especially Vite).
+- Created backend functions
+  - Built graph, implemented Dijkstra.
+- Integrated POSTing
+  - Request: [animeTo, animeFrom] from text inputs
+  - Response: path between the two (not including animeTo)
 
 Currently:
-- Deploy path-finding algorithm to existing backend
-- Integrate components to achieve page functionality
-- Use custom CSS to spruce up display
+- Improve display
+  - Customize start card
+- Look into Redux
+- Visualize graph; increase graph size
