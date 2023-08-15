@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+
+body {
+  background-color: #EEEEDD;
+  font-family: 'Karla', sans-serif;
+}
+
+.nav-bar, .nav-link, .nav-link:hover {
+  color: #FFF;
+}
+
 .centered-container {
   display: flex;
   justify-content: center;
@@ -5,18 +16,31 @@
   width: 100%;
 }
 
-input[type=text]{
-  border-radius:10px;
+.btn {
+  margin: 0px 10px;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   align-items: center;
-  width: 90%;
+  width: 95%;
 }
 
 .card {
+  background-color: #F6AF8E;
   margin: 20px;
-  height: 200px;
+  width: 225px;
+  overflow: hidden;
+}
+
+.card-title {
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-top {
+  height: 300px;
 }

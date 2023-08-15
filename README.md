@@ -15,9 +15,9 @@ Inspired by "Boil the Frog," a tool that finds a path between two musical artist
 - Integrated POSTing
   - Request: [animeTo, animeFrom] from text inputs
   - Response: path between the two (not including animeTo)
+  - Cards are generated based on path information
 
 Currently:
-- Improve display
-  - Customize start card
+- Dynamically customize start and end cards
 - Look into Redux
 - Visualize graph; increase graph size

@@ -33,8 +33,13 @@ function SearchForm() {
 
   return (
     <>
-      <div className="centered-container">
-        find a path between two anime using MyAnimeList recommendations!
+      <div
+        className="centered-container"
+        style={{ padding: "30px 0px 0px 0px" }}
+      >
+        <h5>
+          find a path between two anime using MyAnimeList recommendations!
+        </h5>
       </div>
       <div className="centered-container">
         <form onSubmit={submitForm}>
