@@ -30,8 +30,7 @@ body {
 .card {
   background-color: #F6AF8E;
   margin: 20px;
-  width: 225px;
-  overflow: hidden;
+  width: 225px;  
 }
 
 .card-title {
@@ -43,4 +42,10 @@ body {
 
 .card-img-top {
   height: 300px;
+  filter: contrast(70%); 
+  transition: 0.5s ease;
+}
+
+.card-img-top:hover {
+  filter: contrast(100%);
 }

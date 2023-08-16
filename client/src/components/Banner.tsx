@@ -12,7 +12,7 @@ function Banner() {
           />
           boil the froppy
         </a>
-        <a className="nav-link" href="github.com/lixhuynh">
+        <a className="nav-link" href="https://github.com/lixhuynh">
           created by @lixhuynh
         </a>
       </div>

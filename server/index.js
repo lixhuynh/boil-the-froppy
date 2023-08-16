@@ -9,12 +9,19 @@ app.post('/api', async (req, res) => {
     const [q1, q2] = req.body;
     try {
       const animeFrom = await jikanjs.search('anime', q1, 1);
+      const startData = {
+        name: animeFrom['data'][0]['title'],
+        votes: 0,
+        img: animeFrom['data'][0]['images']['jpg']['image_url'],
+        url: animeFrom['data'][0]['url']
+      }
       const animeTo = await jikanjs.search('anime', q2, 1);
       const idFrom = animeFrom['data'][0]['mal_id'].toString();
       const idTo = animeTo['data'][0]['mal_id'].toString();
-      const responseData = graph.findPath(graph.top50, idFrom, idTo);
+      const path = graph.findPath(graph.top50, idFrom, idTo);
+      path.unshift(startData);
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(responseData);
+      res.status(200).json(path);
     } catch(error) {
       throw error;
     }
