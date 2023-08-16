@@ -2,7 +2,6 @@ import { useState } from "react";
 import RecCardGrid from "./RecCardGrid";
 
 function SearchForm() {
-  const [start, setStart] = useState({});
   const [content, setContent] = useState([]);
   const [contentLoaded, setContentLoaded] = useState(false);
   const [animeFrom, setAnimeFrom] = useState("");
