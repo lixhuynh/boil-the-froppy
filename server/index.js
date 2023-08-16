@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const jikanjs = require('@mateoaranda/jikanjs');
 const graph = require('./graph');
+const graphData = require('./graph-data.json')
 
 app.use(express.json());
 
@@ -18,7 +19,7 @@ app.post('/api', async (req, res) => {
       const animeTo = await jikanjs.search('anime', q2, 1);
       const idFrom = animeFrom['data'][0]['mal_id'].toString();
       const idTo = animeTo['data'][0]['mal_id'].toString();
-      const path = graph.findPath(graph.top50, idFrom, idTo);
+      const path = graph.findPath(graphData, idFrom, idTo);
       path.unshift(startData);
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(path);
@@ -28,7 +29,7 @@ app.post('/api', async (req, res) => {
 })
 
 app.get('/api', async (req, res) => {
-  res.json(graph.top50);
+  res.json(graphData);
 })
 
 app.listen(5000, () => {console.log('Server started')});
