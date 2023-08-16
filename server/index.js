@@ -1,8 +1,21 @@
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const jikanjs = require('@mateoaranda/jikanjs');
 const graph = require('./graph');
 const graphData = require('./graph-data.json')
+
+const allowedOrigins = ['https://boil-the-froppy.vercel.app/']
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
