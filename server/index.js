@@ -5,7 +5,7 @@ const jikanjs = require('@mateoaranda/jikanjs');
 const graph = require('./graph');
 const graphData = require('./graph-data.json')
 
-const allowedOrigins = ['https://btf-server.vercel.app/', 'https://boil-the-froppy.vercel.app/'];
+const allowedOrigins = ['https://btf-server.vercel.app', 'https://boil-the-froppy.vercel.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     console.log(origin);
