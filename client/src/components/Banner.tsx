@@ -4,7 +4,7 @@ function Banner() {
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img
-            src="/src/assets/froggy.svg"
+            src="https://img.icons8.com/?size=512&id=5qhbwcEMWrxF&format=svg"
             width="50"
             height="30"
             className="icon d-inline-block align-top"

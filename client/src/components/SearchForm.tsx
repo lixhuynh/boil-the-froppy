@@ -19,7 +19,7 @@ function SearchForm() {
         body: JSON.stringify([animeFrom, animeTo]),
       };
       try {
-        const res = await fetch("/api", params);
+        const res = await fetch("https://btf-server.vercel.app/api", params);
         const resData = await res.json();
         setContent(resData);
         setContentLoaded(true);
