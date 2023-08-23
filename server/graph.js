@@ -96,6 +96,4 @@ function findPath(graph, start, end) {
   return path;
 }
 
-module.exports.getTopAnime = getTopAnime;
-module.exports.getRecsForSet = getRecsForSet;
 module.exports.findPath = findPath;
